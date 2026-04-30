@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "email": "admin@aihouse.dz",
+      "password_hash": "hashed_pw_1",
+      "name": "Admin User",
+      "role": "admin",
+      "department": "administration",
+      "is_active": true,
+      "_id": "oglli2nwa",
+      "created_at": "2026-04-29T22:48:27.116Z"
+    },
+    {
+      "email": "organizer@aihouse.dz",
+      "password_hash": "hashed_pw_2",
+      "name": "Nour El Imane",
+      "role": "organizer",
+      "department": "computer_science",
+      "is_active": true,
+      "_id": "pc5pfm4vv",
+      "created_at": "2026-04-29T22:48:27.116Z"
+    },
+    {
+      "email": "rep@aihouse.dz",
+      "password_hash": "hashed_pw_3",
+      "name": "Dr. Brahim",
+      "role": "lecturer_rep",
+      "department": "mathematics",
+      "is_active": true,
+      "_id": "flnphh17c",
+      "created_at": "2026-04-29T22:48:27.116Z"
+    },
+    {
+      "email": "rectorate@univ.dz",
+      "password_hash": "hashed_pw_4",
+      "name": "Rectorate Office",
+      "role": "rectorate",
+      "department": "rectorate",
+      "is_active": true,
+      "_id": "og8ld2b19",
+      "created_at": "2026-04-29T22:48:27.116Z"
+    }
+  ],
+  "activities": [],
+  "representatives": [],
+  "activitys": [
+    {
+      "title": "AI Ethics Workshop",
+      "scheduled_date": "2026-05-10T00:00:00.000Z",
+      "status": "approved",
+      "department": "computer_science",
+      "_id": "lrrr4p6k7",
+      "created_at": "2026-04-29T22:48:27.126Z"
+    },
+    {
+      "title": "Generative AI Seminar",
+      "scheduled_date": "2026-06-15T00:00:00.000Z",
+      "status": "proposed",
+      "department": "mathematics",
+      "_id": "l94ucdtmc",
+      "created_at": "2026-04-29T22:48:27.126Z"
+    }
+  ]
+}

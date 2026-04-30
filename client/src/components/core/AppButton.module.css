@@ -1,0 +1,57 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 30px; /* Nordic rounded look */
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  text-transform: lowercase;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.primary {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+}
+
+.primary:not(.disabled):hover {
+  background-color: var(--accent-hover);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.secondary:not(.disabled):hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.danger {
+  background-color: #ffeaea;
+  color: #e60000;
+}
+
+.danger:not(.disabled):hover {
+  background-color: #ffd1d1;
+}

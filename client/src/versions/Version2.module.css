@@ -1,0 +1,116 @@
+.container {
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  color: #1A1A1A;
+  font-family: 'Work Sans', sans-serif;
+  padding: 40px 20px;
+}
+
+.maxW {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1A1A1A;
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 4px solid #D4A574;
+}
+
+.pageTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 40px;
+  max-width: 800px;
+  letter-spacing: -1px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #D1D1D1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.cardStatus {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #D4A574;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.cardTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.cardBody {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dataRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #555;
+}
+
+.dataRow strong {
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.cardFooter {
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #D4A574;
+}

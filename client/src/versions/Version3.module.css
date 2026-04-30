@@ -1,0 +1,130 @@
+.container {
+  min-height: 100vh;
+  background-color: #FFFEF8;
+  color: #2D2D2D;
+  font-family: 'Source Serif 4', serif;
+  padding: 20px;
+}
+
+.maxW {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 3px solid #2D2D2D;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1F3A5F;
+  letter-spacing: -1px;
+}
+
+.date {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pageTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #2D2D2D;
+  padding-bottom: 20px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.card {
+  background-color: #FFFEF8;
+  border-bottom: 2px solid #2D2D2D;
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.cardStatus {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #1F3A5F;
+  border-top: 1px solid #1F3A5F;
+  border-bottom: 1px solid #1F3A5F;
+  padding: 4px 0;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.metaItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 4px;
+}
+
+.metaLabel {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.btn {
+  background: transparent;
+  color: #2D2D2D;
+  border: 1px solid #2D2D2D;
+  padding: 8px 16px;
+  font-family: 'Source Serif 4', serif;
+  font-variant: small-caps;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #1F3A5F;
+  color: #FFFEF8;
+  border-color: #1F3A5F;
+}

@@ -1,0 +1,112 @@
+.container {
+  min-height: 100vh;
+  background-color: #0D0D0D;
+  color: #FAFAFA;
+  font-family: 'IBM Plex Serif', serif;
+  padding: 40px 40px;
+}
+
+.maxW {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FAFAFA;
+  letter-spacing: 2px;
+}
+
+.logoAccent {
+  color: #E07A5F;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #FAFAFA;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: #1A1A1A;
+  border: 1px solid #333333;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardStatus {
+  align-self: flex-start;
+  color: #E07A5F;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.cardBody {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.dataTable {
+  width: 100%;
+}
+
+.dataTable td {
+  padding: 8px 0;
+  border-bottom: 1px solid #333333;
+}
+
+.dataTable td:first-child {
+  color: #888;
+  width: 100px;
+}
+
+.dataTable tr:last-child td {
+  border-bottom: none;
+}
+
+.btn {
+  background: transparent;
+  color: #E07A5F;
+  border: 1px solid #E07A5F;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background: #E07A5F;
+  color: #0D0D0D;
+}

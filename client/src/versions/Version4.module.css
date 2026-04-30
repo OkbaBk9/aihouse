@@ -1,0 +1,104 @@
+.container {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  color: #333333;
+  font-family: 'Manrope', sans-serif;
+  padding: 60px 20px;
+}
+
+.maxW {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4A7C59;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
+.pageTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #333333;
+  text-transform: lowercase;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background-color: #FAFAFA;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardStatus {
+  align-self: flex-start;
+  font-family: 'Outfit', sans-serif;
+  background-color: #eef5f0;
+  color: #4A7C59;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+}
+
+.cardTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.cardBody {
+  flex-grow: 1;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.dataRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.btn {
+  background: #FFFFFF;
+  color: #333333;
+  border: 1px solid #E5E5E5;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.btn:hover {
+  border-color: #4A7C59;
+  color: #4A7C59;
+}
