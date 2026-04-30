@@ -182,34 +182,27 @@ const startServer = async () => {
 
   try {
     const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/aihouse';
-    await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 2000 });
-    console.log('📦 Connected to LOCAL MongoDB at', mongoUri);
+    if (mongoose.connection.readyState !== 1) {
+      await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 2000 });
+      console.log('📦 Connected to LOCAL MongoDB at', mongoUri);
+      await autoSeed();
+    }
   } catch {
     console.log('⚠️  No local MongoDB found. Starting an in-memory MongoDB...');
     const mongod = await MongoMemoryServer.create();
     await mongoose.connect(mongod.getUri());
     console.log('📦 Connected to IN-MEMORY MongoDB');
     usingMemory = true;
+    await autoSeed();
   }
 
-  await autoSeed();
-
-  app.listen(PORT, () => {
-    console.log('');
-    console.log(`🚀 AI House Backend running on http://localhost:${PORT}`);
-    console.log(`📡 Health check:      http://localhost:${PORT}/api/health`);
-    console.log(`📋 Activities:        http://localhost:${PORT}/api/activities`);
-    console.log(`👥 Representatives:   http://localhost:${PORT}/api/representatives`);
-    console.log(`🏛️  Departments:       http://localhost:${PORT}/api/departments`);
-    console.log(`📝 Enrollments:       http://localhost:${PORT}/api/enrollments`);
-    console.log(`📢 Announcements:     http://localhost:${PORT}/api/announcements`);
-    console.log(`⭐ Feedbacks:         http://localhost:${PORT}/api/feedbacks`);
-    if (usingMemory) {
-      console.log('');
-      console.log('⚡ Running in-memory mode. Install MongoDB locally for persistence.');
-    }
-    console.log('');
-  });
+  if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+      console.log(`🚀 AI House Backend running on http://localhost:${PORT}`);
+    });
+  }
 };
 
 startServer();
+
+export default app;
