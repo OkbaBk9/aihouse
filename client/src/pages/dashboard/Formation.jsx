@@ -8,7 +8,7 @@ export default function Formation() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/activities')
+    fetch('/api/activities')
       .then(res => res.json())
       .then(data => {
         const mappedData = data.map(evt => ({

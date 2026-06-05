@@ -4,7 +4,7 @@ import SmartInput from '../../components/core/SmartInput';
 import AppButton from '../../components/core/AppButton';
 import { useAuth } from '../../context/AuthContext';
 
-const API = 'http://localhost:5000/api/auth';
+const API = '/api/auth';
 
 export default function Register() {
   const navigate = useNavigate();

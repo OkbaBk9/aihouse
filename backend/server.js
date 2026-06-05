@@ -175,26 +175,48 @@ async function autoSeed() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Start the server
+// Database initialization (singleton pattern)
 // ─────────────────────────────────────────────────────────────────────────────
-const startServer = async () => {
-  let usingMemory = false;
+let dbInitialized = false;
+
+const initializeDatabase = async () => {
+  if (dbInitialized) return;
 
   try {
     const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/aihouse';
     if (mongoose.connection.readyState !== 1) {
       await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 2000 });
-      console.log('📦 Connected to LOCAL MongoDB at', mongoUri);
+      console.log('📦 Connected to MongoDB at', mongoUri);
       await autoSeed();
     }
   } catch {
-    console.log('⚠️  No local MongoDB found. Starting an in-memory MongoDB...');
-    const mongod = await MongoMemoryServer.create();
-    await mongoose.connect(mongod.getUri());
-    console.log('📦 Connected to IN-MEMORY MongoDB');
-    usingMemory = true;
-    await autoSeed();
+    console.log('⚠️  No MongoDB connection available. Using in-memory database...');
+    try {
+      const mongod = await MongoMemoryServer.create();
+      await mongoose.connect(mongod.getUri());
+      console.log('📦 Connected to IN-MEMORY MongoDB');
+      await autoSeed();
+    } catch (memoryError) {
+      console.error('⚠️  Could not initialize in-memory database:', memoryError.message);
+    }
   }
+  
+  dbInitialized = true;
+};
+
+// Initialize DB on app startup
+app.use(async (req, res, next) => {
+  if (!dbInitialized) {
+    await initializeDatabase();
+  }
+  next();
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Start the server (for local development)
+// ─────────────────────────────────────────────────────────────────────────────
+const startServer = async () => {
+  await initializeDatabase();
 
   if (process.env.NODE_ENV !== 'production') {
     app.listen(PORT, () => {
@@ -203,6 +225,9 @@ const startServer = async () => {
   }
 };
 
-startServer();
+// Start server if not in Vercel (NODE_ENV check for serverless)
+if (process.env.VERCEL !== 'true' && !process.env.VERCEL_URL) {
+  startServer();
+}
 
 export default app;

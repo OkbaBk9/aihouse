@@ -6,7 +6,7 @@ export default function Network() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/representatives')
+    fetch('/api/representatives')
       .then(res => res.json())
       .then(data => {
         const mappedReps = data.map(r => ({

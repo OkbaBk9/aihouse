@@ -4,7 +4,7 @@ import SmartInput from '../../components/core/SmartInput';
 import AppButton from '../../components/core/AppButton';
 import { useAuth } from '../../context/AuthContext';
 
-const API = 'http://localhost:5000/api/auth';
+const API = '/api/auth';
 
 const TEST_ACCOUNTS = [
   { email: 'admin@aihouse.dz', password: 'Test123!', role: 'admin', name: 'Admin User' },

@@ -15,7 +15,7 @@ export default function EventCard({ event }) {
     if (!user || !event._id) return;
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/enrollments', {
+      const res = await fetch('/api/enrollments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

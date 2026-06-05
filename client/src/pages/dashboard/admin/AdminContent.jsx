@@ -16,7 +16,7 @@ export default function AdminContent() {
 
   const fetchAnnouncements = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/announcements');
+      const res = await fetch('/api/announcements');
       const data = await res.json();
       setAnnouncements(data);
       setLoading(false);
@@ -29,7 +29,7 @@ export default function AdminContent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch('http://localhost:5000/api/announcements', {
+      await fetch('/api/announcements', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, author_id: user.id })
@@ -43,7 +43,7 @@ export default function AdminContent() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/announcements/${id}`, { method: 'DELETE' });
+      await fetch(`/api/announcements/${id}`, { method: 'DELETE' });
       fetchAnnouncements();
     } catch (error) {
       console.error(error);

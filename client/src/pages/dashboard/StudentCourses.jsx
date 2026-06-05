@@ -10,7 +10,7 @@ export default function StudentCourses() {
 
   useEffect(() => {
     if (user?.id) {
-      fetch(`http://localhost:5000/api/enrollments?user_id=${user.id}`)
+      fetch(`/api/enrollments?user_id=${user.id}`)
         .then(res => res.json())
         .then(data => {
           setEnrolled(data);

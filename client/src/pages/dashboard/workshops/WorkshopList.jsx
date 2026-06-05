@@ -12,7 +12,7 @@ export default function WorkshopList() {
 
   useEffect(() => {
     if (user?.id) {
-      fetch(`http://localhost:5000/api/activities?organizer_id=${user.id}`)
+      fetch(`/api/activities?organizer_id=${user.id}`)
         .then(res => res.json())
         .then(data => {
           setWorkshops(data);

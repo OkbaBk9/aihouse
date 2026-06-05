@@ -16,8 +16,8 @@ export default function AdminConsole() {
   const fetchData = async () => {
     try {
       const [repsRes, actRes] = await Promise.all([
-        fetch('http://localhost:5000/api/representatives'),
-        fetch('http://localhost:5000/api/activities')
+        fetch('/api/representatives'),
+        fetch('/api/activities')
       ]);
       const repsData = await repsRes.json();
       const actData = await actRes.json();
@@ -32,7 +32,7 @@ export default function AdminConsole() {
   };
 
   const handleValidateRep = async (id, status) => {
-    await fetch(`http://localhost:5000/api/representatives/${id}`, {
+    await fetch(`/api/representatives/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ validation_status: status, validated_by: user.id })
@@ -41,7 +41,7 @@ export default function AdminConsole() {
   };
 
   const handleValidateActivity = async (id, status) => {
-    await fetch(`http://localhost:5000/api/activities/${id}`, {
+    await fetch(`/api/activities/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })

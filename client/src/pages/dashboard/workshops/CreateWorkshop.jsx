@@ -31,7 +31,7 @@ export default function CreateWorkshop() {
     const scheduled_date = new Date(`${formData.event_date}T${formData.event_time}`);
 
     try {
-      const res = await fetch('http://localhost:5000/api/activities', {
+      const res = await fetch('/api/activities', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
